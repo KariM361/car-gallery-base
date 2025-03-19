@@ -1,4 +1,5 @@
 //find alle thumbnails
+
 let thumbs = document.querySelectorAll('.imgTile');
 console.log(thumbs);
 
@@ -6,17 +7,17 @@ console.log(thumbs);
 thumbs.forEach((element) => {
   element.addEventListener('click', function (e) {
     // find det lille billede
+    let smallImg = e.target.src;
+    console.log(smallImg);
 
-    let bigImg = document.querySelector('.bigImg');
-    console.log(e.target.src);
+    // find det store billede
+    let BigImage = document.getElementById('BigImage').src;
+    console.log(BigImage);
 
-    // byt src (source)
+    // sæt det store billed på der lilles source
+    e.target.src = BigImage;
+
+    // sæt det lille billed på det stores source
+    document.getElementById('BigImage').src = smallImg;
   });
 });
-// når der klikkes på en thumbnail, skal det store billede bytte plads med der lille
-
-// find det lille billede
-
-// find det store billede
-
-// byt src (sources
